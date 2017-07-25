@@ -1,14 +1,15 @@
 {
     "compilerOptions": {
         "noImplicitAny": false,
-        "noEmit": true,
+        "noEmitOnError": true,
         "removeComments": false,
         "sourceMap": true,
         "target": "es6",
         "module": "commonjs",
         "moduleResolution": "node",
         "emitDecoratorMetadata": true,
-        "experimentalDecorators": true
+        "experimentalDecorators": true,
+        "skipLibCheck": true
     },
     "exclude": [
         "node_modules"
