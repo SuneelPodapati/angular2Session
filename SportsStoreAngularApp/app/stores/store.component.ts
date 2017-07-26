@@ -21,5 +21,7 @@ export class StoreComponent{
         return this.repository.getProducts();
     }
 
-    
+    get Categories(): string[]{
+        return this.repository.getCategories();
+    }
 }
