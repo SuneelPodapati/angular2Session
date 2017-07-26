@@ -11,9 +11,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
 const product_repository_1 = require("../models/product.repository");
+const cart_model_1 = require("../models/cart.model");
 let StoreComponent = class StoreComponent {
-    constructor(repository) {
+    constructor(repository, cart) {
         this.repository = repository;
+        this.cart = cart;
         this.selectedCategory = null;
         this.productsPerPage = 4;
         this.selectedPage = 1;
@@ -34,6 +36,9 @@ let StoreComponent = class StoreComponent {
     get pageCount() {
         return Math.ceil(this.repository.getProducts(this.selectedCategory).length / this.productsPerPage);
     }
+    addProductToCart(product) {
+        this.cart.addLine(product);
+    }
 };
 StoreComponent = __decorate([
     core_1.Component({
@@ -41,7 +46,7 @@ StoreComponent = __decorate([
         moduleId: module.id,
         templateUrl: "store.component.html"
     }),
-    __metadata("design:paramtypes", [product_repository_1.ProductRepository])
+    __metadata("design:paramtypes", [product_repository_1.ProductRepository, cart_model_1.Cart])
 ], StoreComponent);
 exports.StoreComponent = StoreComponent;
 //# sourceMappingURL=store.component.js.map
