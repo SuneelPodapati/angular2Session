@@ -7,13 +7,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
-let AppComponent = class AppComponent {
+const platform_browser_1 = require("@angular/platform-browser");
+const store_component_1 = require("./store.component");
+const model_module_1 = require("../models/model.module");
+const counter_directive_1 = require("./counter.directive");
+let StoreModule = class StoreModule {
 };
-AppComponent = __decorate([
-    core_1.Component({
-        selector: "app",
-        template: "<stores></stores>"
+StoreModule = __decorate([
+    core_1.NgModule({
+        imports: [platform_browser_1.BrowserModule, model_module_1.ModelModule],
+        declarations: [store_component_1.StoreComponent, counter_directive_1.CounterDirective],
+        exports: [store_component_1.StoreComponent]
     })
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+], StoreModule);
+exports.StoreModule = StoreModule;
+//# sourceMappingURL=store.module.js.map
