@@ -5,16 +5,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
-let AppComponent = class AppComponent {
+const cart_model_1 = require("../models/cart.model");
+let CartDetailComponent = class CartDetailComponent {
+    constructor(cart) {
+        this.cart = cart;
+    }
 };
-AppComponent = __decorate([
+CartDetailComponent = __decorate([
     core_1.Component({
-        selector: "app",
-        // template: "<stores></stores>"
-        template: "<router-outlet></router-outlet>"
-    })
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+        moduleId: module.id,
+        templateUrl: "cartdetailcomponet.html"
+    }),
+    __metadata("design:paramtypes", [cart_model_1.Cart])
+], CartDetailComponent);
+exports.CartDetailComponent = CartDetailComponent;
+//# sourceMappingURL=cartdetail.component.js.map

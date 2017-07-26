@@ -12,13 +12,14 @@ const store_component_1 = require("./store.component");
 const model_module_1 = require("../models/model.module");
 const counter_directive_1 = require("./counter.directive");
 const cartsummary_component_1 = require("./cartsummary.component");
+const cartdetail_component_1 = require("./cartdetail.component");
 let StoreModule = class StoreModule {
 };
 StoreModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, model_module_1.ModelModule],
-        declarations: [store_component_1.StoreComponent, counter_directive_1.CounterDirective, cartsummary_component_1.CartSummary],
-        exports: [store_component_1.StoreComponent]
+        declarations: [store_component_1.StoreComponent, counter_directive_1.CounterDirective, cartsummary_component_1.CartSummary, cartdetail_component_1.CartDetailComponent],
+        exports: [store_component_1.StoreComponent, cartdetail_component_1.CartDetailComponent]
     })
 ], StoreModule);
 exports.StoreModule = StoreModule;

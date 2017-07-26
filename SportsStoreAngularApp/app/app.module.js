@@ -10,12 +10,20 @@ const core_1 = require("@angular/core");
 const platform_browser_1 = require("@angular/platform-browser");
 const forms_1 = require("@angular/forms");
 const app_component_1 = require("./app.component");
+const store_component_1 = require("./stores/store.component");
 const store_module_1 = require("./stores/store.module");
+const cartdetail_component_1 = require("./stores/cartdetail.component");
+const router_1 = require("@angular/router");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, store_module_1.StoreModule],
+        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, store_module_1.StoreModule, router_1.RouterModule.forRoot([
+                { path: "store", component: store_component_1.StoreComponent },
+                { path: "cart", component: cartdetail_component_1.CartDetailComponent },
+                { path: "checkout", component: store_component_1.StoreComponent },
+                { path: "**", redirectTo: "/store" }
+            ])],
         declarations: [app_component_1.AppComponent],
         bootstrap: [app_component_1.AppComponent]
     })
